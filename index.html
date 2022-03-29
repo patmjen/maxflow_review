@@ -8,13 +8,13 @@
   </head>
   <body>
   <section class="section">
-    <div class="container has-text-centered">
+    <div class="container has-text-centered is-max-desktop">
       <h1 class="title is-2 is-spaced">
         Review of Serial and Parallel Min-Cut/Max-Flow<br>
         Algorithms for Computer Vision
       </h1>
 
-      <p class="subtitle is-4">Under Review</p>
+      <p class="subtitle is-4">Under review, 2022</p>
       <p class="subtitle is-4">
         <a href="mailto:patmjen@dtu.dk">Patrick M. Jensen</a>,
         <a href="mailto:niejep@dtu.dk">Niels Jeppesen</a>,
@@ -25,10 +25,74 @@
       </p>
 
       <div>
-        <button class="button is-dark is-medium is-rounded" style="margin-right: 0.5em; margin-left: 0.5em;" onclick="location.href='https://arxiv.org/pdf/2202.00418.pdf'" type="botton">Paper</button>
-        <button class="button is-dark is-medium is-rounded" style="margin-right: 0.5em; margin-left: 0.5em;" onclick="location.href='https://github.com/patmjen/maxflow_algorithms'" type="botton">Code</button>
-        <button class="button is-dark is-medium is-rounded" style="margin-right: 0.5em; margin-left: 0.5em;" onclick="location.href='https://doi.org/10.11583/DTU.17091101'" type="botton">Data</button>
+        <a class="button is-dark is-medium is-rounded" style="background-color:#990000; margin-right: 0.5em; margin-left: 0.5em;" href="https://arxiv.org/pdf/2202.00418.pdf">Paper</a>
+        <a class="button is-dark is-medium is-rounded" style="background-color:#990000; margin-right: 0.5em; margin-left: 0.5em;" href="https://github.com/patmjen/maxflow_algorithms">Code</a>
+        <a class="button is-dark is-medium is-rounded" style="background-color:#990000; margin-right: 0.5em; margin-left: 0.5em;" href="https://doi.org/10.11583/DTU.17091101">Data</a>
       </div>
+
+      <h2 class="title is-3" style="margin-top: 1em;">Abstract</h2>
+      <div class="has-text-justified">
+      Minimum cut/maximum flow (min-cut/max-flow) algorithms solve a variety of problems in computer vision and thus significant
+      effort has been put into developing fast min-cut/max-flow algorithms. As a result, it is difficult to choose an optimal algorithm for a given
+      problem. Furthermore, parallel algorithms have not been thoroughly compared. In this paper, we evaluate the state-of-the-art serial and
+      parallel min-cut/max-flow algorithms on the largest set of computer vision problems yet. We focus on generic algorithms , i.e., for
+      unstructured graphs, but also compare with the specialized GridCut implementation. When applicable, GridCut performs best. Otherwise,
+      the two pseudoflow algorithms, Hochbaum pseudoflow and excesses incremental breadth first search, achieves the overall best
+      performance. The most memory efficient implementation tested is of the Boykov-Kolmogorov algorithm. Amongst generic parallel
+      algorithms, we find the bottom-up merging approach by Liu and Sun to be best, but no method is dominant. Of the generic parallel
+      methods, only the parallel preflow push-relabel algorithm is able to efficiently scale with many processors across problem sizes, and no
+      generic parallel method consistently outperforms serial algorithms. Finally, we provide and evaluate strategies for algorithm selection to
+      obtain good expected performance. We make our dataset and implementations publicly available for further research
+      </div>
+
+      <h2 class="title is-3" style="margin-top: 1em;">Comparison of Serial Algorithms</h2>
+      <div class="columns">
+        <div class="column">
+          <img src="./media/serial_rel_perf_total.svg" alt="Comparison on total times"/><br>
+          Comparison on total times
+        </div>
+        <div class="column">
+          <img src="./media/serial_rel_perf_solve.svg" alt="Comparison on solve times"/><br>
+          Comparison on solve times
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <img src="./media/serial_variations_comp_0.svg" alt="Comparison on solve times"/><br>
+          Comparison of BK variants
+        </div>
+        <div class="column">
+          <img src="./media/serial_variations_comp_1.svg" alt="Comparison on total times"/><br>
+          Comparison of EIBFS variants
+        </div>
+        <div class="column">
+          <img src="./media/serial_variations_comp_2.svg" alt="Comparison on total times"/><br>
+          Comparison of HPF variants
+        </div>
+      </div>
+
+      <h2 class="title is-3" style="margin-top: 1em;">Comparison of Parallel Algorithms</h2>
+      <img src="./media/parallel_rel_perf_solve.svg" alt="Speed-up of parallel algorithms"/><br>
+      Speed-up of parallel algorithms compared to best serial algorithm.<br><br>
+
+      <div class="columns is-centered">
+        <div class="column is-narrow">
+          <img src="./media/parallel_speedup_pmbk.svg" alt="Speed-up of Liu-Sun"/><br>
+          Speed-up of Liu-Sun<br><br>
+          <img src="./media/parallel_speedup_pmbk.svg" alt="Speed-up of Strandmark-Kahl"/><br>
+          Speed-up of Strandmark-Kahl
+        </div>
+        <div class="column is-narrow">
+          <img src="./media/parallel_speedup_ppr.svg" alt="Speed-up of P-PPR"/><br>
+          Speed-up of P-PPR<br><br>
+          <img src="./media/parallel_speedup_pard.svg" alt="Speed-up of P-ARD"/><br>
+          Speed-up of P-ARD
+        </div>
+      </div>
+
+      <h2 class="title is-3" style="margin-top: 1em;">Algorithm Selection</h2>
+
     </div>
   </section>
   </body>
