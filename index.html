@@ -93,9 +93,11 @@
       </div>
 
       <h2 class="title is-3" style="margin-top: 1em;">Algorithm Selection</h2>
-      <div class="columns is-centered">
+      <p class="has-text-left">We evalute different strategies for selecting a min-cut/max-flow algorithm depending on graph knowledge. Each strategy is evaluated on the mean relative performance (RP). A value of one means the strategy always selects the fastest algorithm.</p><br>
+      <p class="has-text-left"><b>Scenario 1: No Graph Knowledge:</b> Here, we select the overall best algorithm. No generic algorithm dominates.<br>*Only counting grid graphs.</p>
+      <div class="columns is-centered" style="margin-top: 0.5em;">
         <div class="column is-narrow">
-          <h3 class="title is-4">Serial algorithms</h3>
+          <h3 class="title is-5 mb-2">Serial algorithms</h3>
           <table class="table is-narrow is-hoverable has-text-right">
             <thead>
               <tr>
@@ -122,7 +124,7 @@
           </table>
         </div>
         <div class="column is-narrow">
-          <h3 class="title is-4">Parallel algorithms</h3>
+          <h3 class="title is-5 mb-2">Parallel algorithms</h3>
           <table class="table is-narrow is-hoverable has-text-right">
             <thead>
               <tr>
@@ -145,8 +147,10 @@
           </table>
         </div>
       </div>
-      <div class="columns is-centered">
+      <p class="has-text-left"><b>Scenario 2: Known Problem Family:</b> Here, we select the overall best algorithm for each problem family. This gives a high mean RP and for serial algorithms it is a near-optimal strategy.</p>
+      <div class="columns is-centered" style="margin-top: 0.5em;">
         <div class="column is-narrow">
+          <h3 class="title is-5 mb-2">Serial algorithms</h3>
           <table class="table is-narrow is-hoverable has-text-left">
             <thead>
               <tr>
@@ -183,6 +187,7 @@
           </table>
         </div>
         <div class="column is-narrow">
+          <h3 class="title is-5 mb-2">Parallel algorithms</h3>
           <table class="table is-narrow is-hoverable has-text-left">
             <thead>
               <tr>
@@ -205,6 +210,19 @@
               <tr><td>Mean &plusmn; stdev.</td><td></td><td style="text-align: right">0.89 &plusmn; 0.14</td></tr>
             </tfoot>
           </table>
+        </div>
+      </div>
+      <p class="has-text-left"><b>Scenario 3: Known Graph:</b> Here, we train a simple decision tree to predict the best algorithm from summary graph statistics (see paper for details). This works well for serial algorithms but struggles for parallel algorithms.</p>
+      <div class="columns is-centered" style="margin-top: 0.5em;">
+        <div class="column is-narrow">
+          <h3 class="title is-5 mb-2">Serial algorithms</h3>
+          <img src="assets/images/serial-tree-normalized-small.svg" alt="Speed-up of parallel algorithms" style="margin-top: 0.5em;"/><br>
+          Decision tree for serial algorithms. Mean RP: 0.82.
+        </div>
+        <div class="column is-narrow">
+          <h3 class="title is-5 mb-2">Parallel algorithms</h3>
+          <img src="assets/images/parallel-tree-normalized-small.svg" alt="Speed-up of parallel algorithms" style="margin-top: 0.5em;"/><br>
+          Decision tree for parallel algorithms. Mean RP: 0.56.
         </div>
       </div>
     </div>
