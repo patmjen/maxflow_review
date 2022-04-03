@@ -31,19 +31,9 @@
       </div>
 
       <h2 class="title is-3" style="margin-top: 1em;">Abstract</h2>
-      <div class="has-text-justified">
-      Minimum cut/maximum flow (min-cut/max-flow) algorithms solve a variety of problems in computer vision and thus significant
-      effort has been put into developing fast min-cut/max-flow algorithms. As a result, it is difficult to choose an optimal algorithm for a given
-      problem. Furthermore, parallel algorithms have not been thoroughly compared. In this paper, we evaluate the state-of-the-art serial and
-      parallel min-cut/max-flow algorithms on the largest set of computer vision problems yet. We focus on generic algorithms , i.e., for
-      unstructured graphs, but also compare with the specialized GridCut implementation. When applicable, GridCut performs best. Otherwise,
-      the two pseudoflow algorithms, Hochbaum pseudoflow and excesses incremental breadth first search, achieves the overall best
-      performance. The most memory efficient implementation tested is of the Boykov-Kolmogorov algorithm. Amongst generic parallel
-      algorithms, we find the bottom-up merging approach by Liu and Sun to be best, but no method is dominant. Of the generic parallel
-      methods, only the parallel preflow push-relabel algorithm is able to efficiently scale with many processors across problem sizes, and no
-      generic parallel method consistently outperforms serial algorithms. Finally, we provide and evaluate strategies for algorithm selection to
-      obtain good expected performance. We make our dataset and implementations publicly available for further research
-      </div>
+      <p class="has-text-justified">
+        Minimum cut/maximum flow (min-cut/max-flow) algorithms solve a variety of problems in computer vision and thus significant effort has been put into developing fast min-cut/max-flow algorithms. As a result, it is difficult to choose an optimal algorithm for a given problem. Furthermore, parallel algorithms have not been thoroughly compared. In this paper, we evaluate the state-of-the-art serial and parallel min-cut/max-flow algorithms on the largest set of computer vision problems yet. We focus on generic algorithms , i.e., for unstructured graphs, but also compare with the specialized GridCut implementation. When applicable, GridCut performs best. Otherwise, the two pseudoflow algorithms, Hochbaum pseudoflow and excesses incremental breadth first search, achieves the overall best performance. The most memory efficient implementation tested is of the Boykov-Kolmogorov algorithm. Amongst generic parallel algorithms, we find the bottom-up merging approach by Liu and Sun to be best, but no method is dominant. Of the generic parallel methods, only the parallel preflow push-relabel algorithm is able to efficiently scale with many processors across problem sizes, and no generic parallel method consistently outperforms serial algorithms. Finally, we provide and evaluate strategies for algorithm selection to obtain good expected performance. We make our dataset and implementations publicly available for further research
+      </p>
 
       <h2 class="title is-3" style="margin-top: 1em;">Comparison of Serial Algorithms</h2>
       <div class="columns">
