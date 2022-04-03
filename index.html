@@ -36,18 +36,23 @@
       </p>
 
       <h2 class="title is-3" style="margin-top: 1em;">Comparison of Serial Algorithms</h2>
-      <div class="columns">
+      <p class="has-text-left">
+        We compare the main serial algorithms used in computer vision. We measure the <i>relative performance (RP)</i> w.r.t. the fastest algorithm for each min-cut/max-flow problem. Distributions close to one means an algorithm was often the fastest. EIBFS and HPF have the best performance.
+      </p>
+      <div class="columns" style="margin-top: 0.5em;">
         <div class="column">
           <img src="assets/images/serial_rel_perf_total.svg" alt="Comparison on total times"/><br>
-          Comparison on total times
+          Comparison on total times (init. + solve)
         </div>
         <div class="column">
           <img src="assets/images/serial_rel_perf_solve.svg" alt="Comparison on solve times"/><br>
           Comparison on solve times
         </div>
       </div>
-
-      <div class="columns">
+      <p class="has-text-left">
+        We also compare variations of each algorithm w.r.t. a reference (see paper for details) to show the effects of implementation details. <b style="color: #2F3EEA">Blue</b> shows total time speed-up and <b style="color: #E83F48">red</b> shows solve time speed-up.
+      </p>
+      <div class="columns" style="margin-top: 0.5em;">
         <div class="column">
           <img src="assets/images/serial_variations_comp_0.svg" alt="Comparison on solve times"/><br>
           Comparison of BK variants
@@ -63,10 +68,16 @@
       </div>
 
       <h2 class="title is-3" style="margin-top: 1em;">Comparison of Parallel Algorithms</h2>
-      <img src="assets/images/parallel_rel_perf_solve.svg" alt="Speed-up of parallel algorithms"/><br>
+      <p class="has-text-left">
+        We compare the state-of-the-art parallel algorithms for min-cut/max-flow in computer vision. We measure the speed-up on solve time w.r.t. the best serial algorithm for each min-cut/max-flow problem. All parallel algorithms have median speed-ups less than one.
+      </p>
+      <img src="assets/images/parallel_rel_perf_solve.svg" alt="Speed-up of parallel algorithms" style="margin-top: 0.5em;"/><br>
       Speed-up of parallel algorithms compared to best serial algorithm.<br><br>
 
-      <div class="columns is-centered">
+      <p class="has-text-left">
+        We also measure the speed-up of each algorithm w.r.t. their single threaded performance. Only P-PPR shows consistent improvements with more threads.
+      </p>
+      <div class="columns is-centered" style="margin-top: 0.5em;">
         <div class="column is-narrow">
           <img src="assets/images/parallel_speedup_pmbk.svg" alt="Speed-up of Liu-Sun"/><br>
           Speed-up of Liu-Sun<br><br>
